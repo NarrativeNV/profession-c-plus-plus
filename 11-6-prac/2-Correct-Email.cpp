@@ -2,6 +2,20 @@
 using namespace std;
 //char allowedSymbols[] = {'!', '#', '$','%', '&', '`', '*', '+', '-', '/', '=', '?', '^', '_', '\'', '{', '}', '|', '~'};
 
+bool is_email(string adress){
+    int count = 0;
+    if (adress[0] == '.' || adress[0] == '@' || adress[adress.length() - 1] == '.') return false;
+    for (int i = 0; i < adress.length(); i++){
+        if (adress[i] == '@') {
+            count++;
+            if (adress[i-1] == ' ' || adress[i-1] == '.' || 
+                adress[i+1] == '.' || adress[i+1] == ' ') return false;
+            }
+    }
+    if (count == 1) return true;
+    return false;
+}
+
 string get_left_adress_part(string leftAdress){
     string leftInit;
     for (int i = 0; leftAdress[i] != '@'; i++){
@@ -53,7 +67,7 @@ int main(){
         cin.clear();
         cout << "Input email adress: ";
         cin >> email;
-        if (adress_validate(get_left_adress_part(email), allowedLeftSymbols, leftSize) && adress_validate(get_right_adress_part(email), allowedRightSymbols, rightSize)) cout << "Yes\n\n";
+        if (is_email(email) && adress_validate(get_left_adress_part(email), allowedLeftSymbols, leftSize) && adress_validate(get_right_adress_part(email), allowedRightSymbols, rightSize)) cout << "Yes\n\n";
         else cout << "No\n\n";
     }
 }
