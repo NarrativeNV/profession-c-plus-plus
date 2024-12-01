@@ -30,8 +30,7 @@ bool adress_validate(string adress, char* allowedSymbols, int arrSize){
     
     if (adress.find("..") != std::string::npos || adress.find("..") != std::string::npos) return false;
     
-    if (adress.front() == '.' || adress.back() == '.' ||
-        adress.front() == '@' || adress.back() == '@') return false;
+    if (adress.front() == '.' || adress.back() == '.') return false;
 
     for (int i = 0; i < adress.length(); i++){
         if ((adress[i] < 'a' || adress[i] > 'z') && 
