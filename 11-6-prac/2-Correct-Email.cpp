@@ -27,7 +27,9 @@ string get_right_adress_part(string rightAdress){
 bool adress_validate(string adress, char* allowedSymbols, int arrSize){
     if (adress.length() > 64 || adress.empty() ||
         adress.length() > 63 || adress.empty()) return false;
+    
     if (adress.find("..") != std::string::npos || adress.find("..") != std::string::npos) return false;
+    
     if (adress.front() == '.' || adress.back() == '.' ||
         adress.front() == '@' || adress.back() == '@') return false;
 
