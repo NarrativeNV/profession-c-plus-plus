@@ -25,8 +25,8 @@ string get_right_adress_part(string rightAdress){
 }
 
 bool adress_validate(string adress, char* allowedSymbols, int arrSize){
-    if ((adress.length() > 64 && arrSize == 20) || adress.empty()) return false;
-    if ((adress.length() > 63 && arrSize == 2) || adress.empty()) return false;
+    if ((adress.length() > 64 && arrSize == 20) || adress.empty()) return false; //local length
+    if ((adress.length() > 63 && arrSize == 2) || adress.empty()) return false; //domain length
     
     if (adress.find("..") != std::string::npos || adress.find("..") != std::string::npos) return false;
     
