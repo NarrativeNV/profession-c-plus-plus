@@ -17,4 +17,5 @@ int main(){
     std::cin >> speed;
 
     float time = travelTime(distance, speed);
+    std::cout << "Travel time: " << time;
 }
