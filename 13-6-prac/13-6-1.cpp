@@ -17,6 +17,7 @@ int main(){
     }
 
     int number_to_delete = 0;
+    std::cin.sync();
     std::cout << "Input number to delete: ";
     std::cin >> number_to_delete;
 
