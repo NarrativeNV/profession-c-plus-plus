@@ -7,6 +7,7 @@ int main() {
     
     for (int i = 0;; i++){
         std::cout << "Input number: ";
+        std::cin.sync();
         std::cin >> number;
         if (number == -1){
             std::cout << "output: ";
