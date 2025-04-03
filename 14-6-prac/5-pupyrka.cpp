@@ -5,9 +5,9 @@ void pupyrka_output(std::vector<std::vector<bool>> pupyrka)
 {
   std::cout << std::endl;
   std::cout << "Pupyrka field\n\n";
-  for (int i = 0; i < 12; i++)
+  for (int i = 0; i < pupyrka.size(); i++)
   {
-    for (int j = 0; j < 12; j++)
+    for (int j = 0; j < pupyrka.size(); j++)
     {
       if (pupyrka[i][j] == true)
         std::cout << "O" << " ";
@@ -21,9 +21,9 @@ void pupyrka_output(std::vector<std::vector<bool>> pupyrka)
 
 std::vector<std::vector<bool>> pupyrka_field(std::vector<std::vector<bool>> pupyrka)
 {
-  for (int i = 0; i < 12; i++)
+  for (int i = 0; i < pupyrka.size(); i++)
   {
-    for (int j = 0; j < 12; j++)
+    for (int j = 0; j < pupyrka.size(); j++)
     {
       pupyrka[i][j] = true;
     }
@@ -55,23 +55,20 @@ std::vector<std::vector<bool>> pupyrka_burst(std::vector<std::vector<bool>> pupy
 
 bool field_check(std::vector<std::vector<bool>> pupyrka)
 {
-  int count = 0;
   for (int i = 0; i < pupyrka.size(); i++)
   {
     for (int j = 0; j < pupyrka.size(); j++)
     {
       if (pupyrka[i][j] == true)
-        ++count;
-      if (count > 0)
         return true;
     }
   }
-  return true;
+  return false;
 }
 
 int main()
 {
-  const int size = 12;
+  const int size = 2;
   std::vector<std::vector<bool>> pupyrka(size, std::vector<bool>(size));
   pupyrka = pupyrka_field(pupyrka);
   while (field_check(pupyrka))
@@ -79,5 +76,6 @@ int main()
     pupyrka_output(pupyrka);
     pupyrka = pupyrka_burst(pupyrka);
   }
-  std::cout << "\n\nGame Over";
+  std::cout << "\nGame Over\n";
+  pupyrka_output(pupyrka);
 }
