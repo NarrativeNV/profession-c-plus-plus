@@ -22,13 +22,16 @@ int main () {
       else sum = 0;
     } 
   }
-  std::cout << "Array: ";
-  for (int i = 0; i < vec.size(); i++){
-    std::cout << vec[i] << " ";
-  } 
-  std::cout << "\nTarget: " << result << std::endl;
-  std::cout << "Answer: " << first_num << " and " << second_num << std::endl;
-  std::cout << first_num << " + " << second_num << " = " << result; 
+
+  if (found){
+    std::cout << "Array: ";
+    for (int i = 0; i < vec.size(); i++){
+      std::cout << vec[i] << " ";
+    } 
+    std::cout << "\nTarget: " << result << std::endl;
+    std::cout << "Answer: " << first_num << " and " << second_num << std::endl;
+    std::cout << first_num << " + " << second_num << " = " << result; 
+  } else std::cout << "Not found";
 
 
 }
