@@ -1,17 +1,37 @@
 #include <iostream>
 
-void string_parser(int& n, int& k, std::string input){
-  for (int i = 0; i < input.length(); i++){
-    if (input[i] >= '0' && input[i] <= '9' && n == 0) {
-      n = input[i] - '0';
-      continue;
+void string_parser(int& n, int& k, const std::string& input) {
+    std::string current_number;
+    int target = 0;
+    for (char ch : input) {
+      if (ch >= '0' && ch <= '9') {
+        current_number += ch;
+      } else {
+        if (!current_number.empty()) {
+          int value = std::stoi(current_number);
+          if (target == 0) {
+            n = value;
+            target = 1;
+          } else {
+              k = value;
+              return;
+            }
+          current_number.clear();
+        }
+      }
     }
-    if (input[i] >= '0' && input[i] <= '9' && k == 0) {
-      k = input[i] - '0';
-      return;
+
+    // Обработка последнего числа в строке
+    if (!current_number.empty()) {
+        int value = std::stoi(current_number);
+        if (target == 0) {
+            n = value;
+        } else {
+            k = value;
+        }
     }
-  }
 }
+
 
 int countWays (int n, int k = 3){
   if (n == 0) return 1;
