@@ -70,11 +70,9 @@ void sector_input (int& cur_sector, int& offset, std::vector<int>& played_sector
     }
     else{
       if (cur_sector + offset > 13){
-        while (cur_sector < 13){
-          ++cur_sector;
-          --offset;
-        }
+        int steps = 13 - cur_sector;
         cur_sector = 0;
+        offset -= steps;
       }
       cur_sector += offset;
       played_sectors.push_back(cur_sector);
