@@ -50,6 +50,8 @@
 		"text_encoding": "cpp",
 		"typeinfo": "cpp",
 		"variant": "cpp",
-		"sstream": "cpp"
+		"sstream": "cpp",
+		"fstream": "cpp",
+		"cstring": "cpp"
 	}
 }
