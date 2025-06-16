@@ -41,7 +41,7 @@ void withdrawal_money(const int& size, const int& atm_size, int* nominals, int* 
   for (int i = size - 1; i >= 0; --i){
 
     if (cash == 0) break;
-
+    
     while (true){
 
       if (nom_amount[i] == 0 || cash / nominals[i] == 0) break;
