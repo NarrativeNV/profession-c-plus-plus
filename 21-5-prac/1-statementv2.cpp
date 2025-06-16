@@ -203,6 +203,8 @@ void data_input (statement& data, bool& input_success){
       input_success = false;
       return;
     }
+    
+    break;
   }
 }
 
