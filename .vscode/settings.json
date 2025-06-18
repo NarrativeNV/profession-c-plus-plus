@@ -53,7 +53,8 @@
     "sstream": "cpp",
     "fstream": "cpp",
     "cstring": "cpp",
-    "ranges": "cpp"
+    "ranges": "cpp",
+    "map": "cpp"
   },
   "editor.hover.enabled": true
 }
