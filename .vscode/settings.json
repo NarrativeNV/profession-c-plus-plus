@@ -54,7 +54,8 @@
     "fstream": "cpp",
     "cstring": "cpp",
     "ranges": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "iomanip": "cpp"
   },
   "editor.hover.enabled": true
 }
